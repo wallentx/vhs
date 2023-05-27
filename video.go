@@ -340,7 +340,7 @@ func MakeGIF(opts VideoOptions) *exec.Cmd {
 
 	//nolint:gosec
 	return exec.Command(
-		"ffmpeg",
+		"ffmpeg -hwaccel auto",
 		buildFFopts(opts, targetFile)...,
 	)
 }
@@ -356,7 +356,7 @@ func MakeWebM(opts VideoOptions) *exec.Cmd {
 
 	//nolint:gosec
 	return exec.Command(
-		"ffmpeg",
+		"ffmpeg -hwaccel auto",
 		buildFFopts(opts, opts.Output.WebM)...,
 	)
 }
@@ -372,7 +372,7 @@ func MakeMP4(opts VideoOptions) *exec.Cmd {
 
 	//nolint:gosec
 	return exec.Command(
-		"ffmpeg",
+		"ffmpeg -hwaccel auto",
 		buildFFopts(opts, opts.Output.MP4)...,
 	)
 }
